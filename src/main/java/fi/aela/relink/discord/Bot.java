@@ -13,7 +13,9 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class Bot extends ListenerAdapter {
+
     Logger LOGGER = Relink.LOGGER;
+
     public static void build() throws LoginException
     {
         JDABuilder.createLight(Config.getToken(), GatewayIntent.GUILD_MESSAGES, GatewayIntent.DIRECT_MESSAGES)
@@ -26,7 +28,8 @@ public class Bot extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         String channel = event.getChannel().getId();
         if (channel.equals(Config.getChannel())) {
-            LOGGER.info("[Discord] <" + event.getAuthor().getName() + "> " + event.getMessage().getContentRaw());
+            String message = "[Discord] <" + event.getAuthor().getName() + "> " + event.getMessage().getContentRaw();
+            LOGGER.info(message);
         }
     }
 }

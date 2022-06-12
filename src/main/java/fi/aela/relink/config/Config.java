@@ -23,14 +23,12 @@ public class Config {
 
         try {
             if (file.createNewFile()) {
-                LOGGER.info("Created blank config file");
+                LOGGER.info("Created a new config file");
                 FileWriter writer = new FileWriter(file);
                 writer.write("insert bot token here");
                 writer.write("\n");
                 writer.write("insert channel id here");
                 writer.close();
-            } else {
-                LOGGER.info("Existing config file found");
             }
         } catch (IOException e) {}
         try {
