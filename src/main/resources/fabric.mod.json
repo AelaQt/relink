@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "relink",
-  "version": "${version}",
+  "version": "${mod_version}",
 
   "name": "Relink",
   "description": "Discord link for Minecraft server",
